@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECHELON · Engineering the Apex</title>
+
+  <meta name="description" content="ECHELON delivers industry-grade academic projects for BTech, MTech, MCA and PhD scholars. Trusted by 2,400+ students across 50+ universities.">
+  <meta name="keywords" content="BTech project, MTech thesis, MCA project, PhD research, academic project development, CS IT engineering">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6366f1">
+  <meta name="author" content="ECHELON">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ECHELON · Engineering the Apex">
+  <meta property="og:description" content="From concept to production-grade system. Trusted by CS/IT scholars worldwide.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>body{opacity:0;transition:opacity .5s ease}body.loaded{opacity:1}</style>
+</head>
+<body class="dark">
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ═══ PRELOADER ═══ -->
+  <div id="preloader" aria-hidden="true">
+    <div class="pl-logo">E</div>
+    <div class="pl-bar"><div class="pl-fill"></div></div>
+    <p class="pl-text">Initializing Platform</p>
+  </div>
+
+  <!-- ═══ SCROLL PROGRESS ═══ -->
+  <div id="scroll-prog" aria-hidden="true"></div>
+
+  <!-- ═══ GRAIN ═══ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ═══ CURSOR ═══ -->
+  <div class="cur-dot" aria-hidden="true"></div>
+  <div class="cur-ring" aria-hidden="true"></div>
+
+  <!-- ═══ BACK TO TOP ═══ -->
+  <button id="btt" aria-label="Back to top">↑</button>
+
+  <!-- ══════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════ -->
+  <header role="banner">
+    <nav id="navbar" aria-label="Main navigation">
+      <div class="nav-wrap">
+
+        <!-- Logo -->
+        <a href="#hero" class="nav-logo" aria-label="ECHELON home">
+          <div class="logo-badge">E</div>
+          <span class="logo-name">ECHELON</span>
+        </a>
+
+        <!-- Desktop links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#process"  class="nav-link">Process</a></li>
+          <li><a href="#vault"    class="nav-link">Work</a></li>
+          <li><a href="#terminal" class="nav-link">Tools</a></li>
+          <li><a href="#pricing"  class="nav-link">Pricing</a></li>
+          <li><a href="#faq"      class="nav-link">FAQ</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+            <span id="theme-icon">🌙</span>
+          </button>
+          <a href="#contact" class="nav-cta desktop">
+            Start Project
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+              <path d="M1.5 9.5L9.5 1.5M9.5 1.5H3M9.5 1.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <button class="ham" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+
+    <!-- Mobile Nav -->
+    <div id="mobile-nav" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <div class="mn-backdrop"></div>
+      <div class="mn-panel">
+        <div class="mn-head">
+          <span aria-hidden="true">ECHELON</span>
+          <button class="mn-close" aria-label="Close menu">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="mn-links" aria-label="Mobile navigation links">
+          <a href="#services" class="mn-link">Services</a>
+          <a href="#process"  class="mn-link">Process</a>
+          <a href="#vault"    class="mn-link">Our Work</a>
+          <a href="#terminal" class="mn-link">Free Tools</a>
+          <a href="#pricing"  class="mn-link">Pricing</a>
+          <a href="#faq"      class="mn-link">FAQ</a>
+          <a href="#contact"  class="mn-link">Contact</a>
+        </nav>
+        <div class="mn-foot">
+          <a href="#contact" class="btn btn-primary btn-full">Start Your Project</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ══ HERO ══ -->
+    <section id="hero" class="hero-section" aria-label="Hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="orb orb-3" aria-hidden="true"></div>
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <!-- Left -->
+        <div class="hero-left">
+          <div class="hero-eyebrow reveal">
+            <div class="pulse-dot" aria-hidden="true"></div>
+            <span>Trusted Academic Engineering Platform</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="line reveal" style="transition-delay:.1s">Build Industry-</span>
+            <span class="line grad-line reveal" style="transition-delay:.2s">Grade Projects</span>
+            <span class="line reveal" style="transition-delay:.3s">That Get Results</span>
+          </h1>
+
+          <p class="hero-desc reveal" style="transition-delay:.4s">
+            Production-quality academic engineering for BTech, MTech, MCA &amp; PhD scholars.
+            We don&rsquo;t just help &mdash; we architect systems built to last.
+          </p>
+
+          <div class="hero-btns reveal" style="transition-delay:.5s">
+            <a href="#contact" class="btn btn-primary btn-lg magnetic">
+              Start Your Project
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                <path d="M1.5 11.5L11.5 1.5M11.5 1.5H3.5M11.5 1.5V9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a href="#vault" class="btn btn-ghost btn-lg magnetic">
+              View Our Work
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                <path d="M6.5 1.5V11.5M6.5 11.5L2.5 7.5M6.5 11.5L10.5 7.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <div class="hero-stats reveal" style="transition-delay:.6s" role="list">
+            <div class="stat-item" role="listitem">
+              <div class="stat-num"><span class="counter" data-target="2400">0</span><span class="unit">+</span></div>
+              <div class="stat-lbl">Students Served</div>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-num"><span class="counter" data-target="98">0</span><span class="unit">%</span></div>
+              <div class="stat-lbl">Success Rate</div>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-num"><span class="counter" data-target="50">0</span><span class="unit">+</span></div>
+              <div class="stat-lbl">Universities</div>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat-item" role="listitem">
+              <div class="stat-num"><span class="counter" data-target="8">0</span><span class="unit">+</span></div>
+              <div class="stat-lbl">Years Active</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right — floating visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="float-card reveal" style="transition-delay:.5s">
+            <div class="fc-head">
+              <div class="fc-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="7" stroke="#fff" stroke-width="1.5"/>
+                  <path d="M7 10L9 12L13 8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <div class="fc-title">Project in Progress</div>
+                <div class="fc-sub">Federated Learning Platform</div>
+              </div>
+            </div>
+            <div class="fc-bar"><div class="fc-bar-fill" style="width:78%"></div></div>
+            <div class="fc-row"><span>Progress</span><strong>78% Complete</strong></div>
+            <div class="fc-row"><span>Deadline</span><strong>14 days left</strong></div>
+            <div class="fc-row"><span>Grade Target</span><strong>A+</strong></div>
+            <div class="fc-tags">
+              <span class="fc-tag">PyTorch</span>
+              <span class="fc-tag">gRPC</span>
+              <span class="fc-tag">Kubernetes</span>
+              <span class="fc-tag">PhD</span>
+            </div>
+          </div>
+
+          <div class="badge-float bf-1">
+            <div class="bf-dot"></div>
+            <span>4-hr Response Time</span>
+          </div>
+          <div class="badge-float bf-2">
+            <span>🎓</span>
+            <span>A+ at IIT Hyderabad</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      </div>
+    </section>
+
+    <!-- ══ UNIVERSITY MARQUEE ══ -->
+    <section id="trust" aria-label="Trusted universities">
+      <p class="trust-label">Projects submitted &amp; graded at</p>
+      <div class="marquee-outer">
+        <div class="marquee-track" aria-hidden="true">
+          <div class="marquee-set">
+            <span class="m-uni">IIT Delhi</span><span class="m-dot">·</span>
+            <span class="m-uni">IIT Bombay</span><span class="m-dot">·</span>
+            <span class="m-uni">IISc Bangalore</span><span class="m-dot">·</span>
+            <span class="m-uni">VTU</span><span class="m-dot">·</span>
+            <span class="m-uni">Anna University</span><span class="m-dot">·</span>
+            <span class="m-uni">Mumbai University</span><span class="m-dot">·</span>
+            <span class="m-uni">JNTUH</span><span class="m-dot">·</span>
+            <span class="m-uni">NIT Trichy</span><span class="m-dot">·</span>
+            <span class="m-uni">BITS Pilani</span><span class="m-dot">·</span>
+            <span class="m-uni">Delhi University</span><span class="m-dot">·</span>
+            <span class="m-uni">Pune University</span><span class="m-dot">·</span>
+            <span class="m-uni">NTU Singapore</span><span class="m-dot">·</span>
+            <span class="m-uni">IIIT Hyderabad</span><span class="m-dot">·</span>
+            <span class="m-uni">Jadavpur University</span><span class="m-dot">·</span>
+          </div>
+          <div class="marquee-set" aria-hidden="true">
+            <span class="m-uni">IIT Delhi</span><span class="m-dot">·</span>
+            <span class="m-uni">IIT Bombay</span><span class="m-dot">·</span>
+            <span class="m-uni">IISc Bangalore</span><span class="m-dot">·</span>
+            <span class="m-uni">VTU</span><span class="m-dot">·</span>
+            <span class="m-uni">Anna University</span><span class="m-dot">·</span>
+            <span class="m-uni">Mumbai University</span><span class="m-dot">·</span>
+            <span class="m-uni">JNTUH</span><span class="m-dot">·</span>
+            <span class="m-uni">NIT Trichy</span><span class="m-dot">·</span>
+            <span class="m-uni">BITS Pilani</span><span class="m-dot">·</span>
+            <span class="m-uni">Delhi University</span><span class="m-dot">·</span>
+            <span class="m-uni">Pune University</span><span class="m-dot">·</span>
+            <span class="m-uni">NTU Singapore</span><span class="m-dot">·</span>
+            <span class="m-uni">IIIT Hyderabad</span><span class="m-dot">·</span>
+            <span class="m-uni">Jadavpur University</span><span class="m-dot">·</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SERVICES ══ -->
+    <section id="services" class="section div-border">
+      <div class="container">
+        <div class="sec-header reveal">
+          <span class="sec-tag">What We Build</span>
+          <h2 class="sec-title">Production-grade systems<br><em>for every discipline</em></h2>
+          <p class="sec-sub">Every deliverable is rigorously documented, tested, and ready for evaluation — not just functional, but exceptional.</p>
+        </div>
+
+        <div class="svc-grid stagger">
+
+          <!-- Full-Stack -->
+          <div class="svc-card" tabindex="0" role="article" aria-label="Full-Stack Development service">
+            <div class="svc-top">
+              <div class="svc-icon" style="background:linear-gradient(135deg,#6366f1,#22d3ee)">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <rect x="2" y="2" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.4"/>
+                  <rect x="13" y="2" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.4"/>
+                  <rect x="2" y="13" width="7" height="7" rx="1.5" stroke="white" stroke-width="1.4"/>
+                  <path d="M14 18H21M17.5 14.5V21.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="svc-num">01</span>
+            </div>
+            <span class="svc-label" style="background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.2)">Full-Stack</span>
+            <h3 class="svc-name">Full-Stack Development</h3>
+            <p class="svc-desc">End-to-end web and mobile systems — REST APIs, databases to responsive frontends. Deployed on cloud with comprehensive documentation and CI/CD pipelines.</p>
+            <ul class="svc-stack" aria-label="Technologies">
+              <li>React / Next.js</li><li>Node.js / Django</li><li>PostgreSQL / MongoDB</li><li>Docker / AWS</li><li>TypeScript</li>
+            </ul>
+          </div>
+
+          <!-- ML/AI -->
+          <div class="svc-card svc-card--offset" tabindex="0" role="article" aria-label="ML and AI Research service">
+            <div class="svc-top">
+              <div class="svc-icon" style="background:linear-gradient(135deg,#a78bfa,#6366f1)">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8" stroke="white" stroke-width="1.4"/>
+                  <circle cx="11" cy="11" r="3" fill="white" opacity=".5"/>
+                  <path d="M11 3V7M11 15V19M3 11H7M15 11H19" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="svc-num">02</span>
+            </div>
+            <span class="svc-label" style="background:rgba(167,139,250,.12);color:#a78bfa;border:1px solid rgba(167,139,250,.2)">AI / ML</span>
+            <h3 class="svc-name">ML &amp; AI Research</h3>
+            <p class="svc-desc">Custom ML models, NLP pipelines, and computer vision systems — with full research papers, accuracy benchmarks, and reproducible Jupyter experiments ready for defense.</p>
+            <ul class="svc-stack" aria-label="Technologies">
+              <li>PyTorch / TF</li><li>Scikit-learn</li><li>HuggingFace</li><li>CUDA</li><li>Jupyter</li>
+            </ul>
+          </div>
+
+          <!-- Systems -->
+          <div class="svc-card" tabindex="0" role="article" aria-label="Systems and Networks service">
+            <div class="svc-top">
+              <div class="svc-icon" style="background:linear-gradient(135deg,#22d3ee,#6366f1)">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <rect x="2" y="3" width="18" height="14" rx="2" stroke="white" stroke-width="1.4"/>
+                  <path d="M3 15L7 10L10 13L15 7L21 15" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="svc-num">03</span>
+            </div>
+            <span class="svc-label" style="background:rgba(34,211,238,.1);color:#22d3ee;border:1px solid rgba(34,211,238,.2)">Systems</span>
+            <h3 class="svc-name">Systems &amp; Networks</h3>
+            <p class="svc-desc">Distributed systems, OS kernels, compiler design, and network simulations — rigorous, low-level engineering for advanced degree requirements and benchmarks.</p>
+            <ul class="svc-stack" aria-label="Technologies">
+              <li>C / C++ / Rust</li><li>Linux / POSIX</li><li>Socket Prog</li><li>Kubernetes</li><li>eBPF</li>
+            </ul>
+          </div>
+
+          <!-- Blockchain -->
+          <div class="svc-card svc-card--offset" tabindex="0" role="article" aria-label="Blockchain and Security service">
+            <div class="svc-top">
+              <div class="svc-icon" style="background:linear-gradient(135deg,#f43f5e,#a78bfa)">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M11 2L20 6.5V15.5L11 20L2 15.5V6.5L11 2Z" stroke="white" stroke-width="1.4"/>
+                  <path d="M11 2V20M2 6.5L20 15.5M20 6.5L2 15.5" stroke="white" stroke-width="1.4" opacity=".4"/>
+                </svg>
+              </div>
+              <span class="svc-num">04</span>
+            </div>
+            <span class="svc-label" style="background:rgba(244,63,94,.1);color:#fb7185;border:1px solid rgba(244,63,94,.2)">Blockchain</span>
+            <h3 class="svc-name">Blockchain &amp; Security</h3>
+            <p class="svc-desc">Smart contracts, DApp development, ZK proofs, and cryptographic implementations. Code is audited, tested, and ready for academic scrutiny and peer review.</p>
+            <ul class="svc-stack" aria-label="Technologies">
+              <li>Solidity / Vyper</li><li>Ethereum</li><li>zkSNARKs</li><li>Hardhat</li><li>Audit Reports</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FEATURES ══ -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="sec-header reveal">
+          <span class="sec-tag">Why ECHELON</span>
+          <h2 class="sec-title">Every advantage you need<br><em>to succeed</em></h2>
+          <p class="sec-sub">We built ECHELON around one goal: helping scholars ship exceptional projects with confidence.</p>
+        </div>
+
+        <div class="feat-grid stagger">
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10L8 15L17 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Production-Grade Code</h3>
+            <p class="feat-desc">Real industry patterns — clean architecture, SOLID principles, proper testing. Not academic toys but systems that scale.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 10H13M10 7V13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feat-title">NDA Protected</h3>
+            <p class="feat-desc">Full non-disclosure agreement before work begins. Your ideas, code, and identity remain completely private.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="feat-title">On-Time Delivery</h3>
+            <p class="feat-desc">Milestone-based delivery with real-time GitHub access. You always know exactly where your project stands.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 10.5L8 13.5L15 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="feat-title">Zero Plagiarism</h3>
+            <p class="feat-desc">Every line of code is original. Includes plagiarism reports and originality certificates for submission confidence.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3L12.5 8H17.5L13.5 11L15 16L10 13L5 16L6.5 11L2.5 8H7.5L10 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Viva &amp; Defense Support</h3>
+            <p class="feat-desc">30-day post-delivery support including mock viva sessions, Q&amp;A prep, and presentation coaching.</p>
+          </div>
+          <div class="feat-card">
+            <div class="feat-icon">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17L8 12M8 12L11 15M8 12L13 7M13 7L17 3M13 7L16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="feat-title">Free Iterations</h3>
+            <p class="feat-desc">Unlimited revisions during development. If something doesn't meet your expectations, we fix it — no questions asked.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROCESS ══ -->
+    <section id="process" class="section div-border">
+      <div class="container">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">How It Works</span>
+          <h2 class="sec-title">A transparent process<br><em>you can trust</em></h2>
+          <p class="sec-sub">No black boxes. Every step is communicated clearly so you always know where your project stands.</p>
+        </div>
+
+        <div class="proc-grid stagger">
+          <div class="proc-connector" id="proc-connector" aria-hidden="true"></div>
+          <div class="proc-step">
+            <div class="proc-node"><span>01</span></div>
+            <h3 class="proc-title">Briefing Call</h3>
+            <p class="proc-desc">We discuss your requirements, university guidelines, deadline, and grading criteria in a free 30-minute call.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-node"><span>02</span></div>
+            <h3 class="proc-title">Proposal &amp; Scope</h3>
+            <p class="proc-desc">You receive a detailed proposal with architecture, tech stack, timeline, and fixed price — no hidden charges ever.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-node"><span>03</span></div>
+            <h3 class="proc-title">Build &amp; Review</h3>
+            <p class="proc-desc">We build incrementally with weekly check-ins. Review code, request changes, track progress on GitHub in real time.</p>
+          </div>
+          <div class="proc-step">
+            <div class="proc-node"><span>04</span></div>
+            <h3 class="proc-title">Delivery &amp; Support</h3>
+            <p class="proc-desc">Full delivery with docs, PPT, and 30 days of post-submission support for viva, review, or revision sessions.</p>
+          </div>
+        </div>
+
+        <div class="trust-row stagger">
+          <div class="trust-pill"><span class="trust-pill-icon">🔒</span><span>NDA Protected</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">✅</span><span>Plagiarism Free</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">🔄</span><span>Free Revisions</span></div>
+          <div class="trust-pill"><span class="trust-pill-icon">🎓</span><span>Viva Support</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ VAULT ══ -->
+    <section id="vault" class="section div-border">
+      <div class="container">
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1rem;margin-bottom:clamp(2.5rem,5vw,4rem)">
+          <div class="sec-header reveal" style="margin-bottom:0">
+            <span class="sec-tag">Our Work</span>
+            <h2 class="sec-title mt-4">Project <em>Vault</em></h2>
+          </div>
+          <p class="reveal" style="font-size:.875rem;color:var(--text2);max-width:260px;line-height:1.65;transition-delay:.1s">
+            A selection of recent projects — every one shipped, graded, and successfully defended.
+          </p>
+        </div>
+
+        <div class="vault-grid stagger">
+
+          <div class="vault-card vault-card--wide">
+            <div class="vault-bar" style="background:linear-gradient(90deg,#6366f1,#22d3ee)"></div>
+            <div class="vault-body">
+              <div class="vault-chips">
+                <span class="vault-chip">Neural Networks</span>
+                <span class="vault-chip">Python</span>
+                <span class="vault-chip">BTech Final Year</span>
+              </div>
+              <h3 class="vault-title">Real-Time Sign Language Interpreter</h3>
+              <p class="vault-desc">CNN-based gesture recognition with 94.7% accuracy, deployed as a browser extension. Handles 30 gestures in under 50ms on consumer hardware.</p>
+              <div class="vault-stack">
+                <span>TensorFlow</span><span>OpenCV</span><span>FastAPI</span><span>React</span>
+              </div>
+            </div>
+            <div class="grade-badge" title="Grade received: A+">A+</div>
+          </div>
+
+          <div class="vault-card">
+            <div class="vault-bar" style="background:linear-gradient(90deg,#a78bfa,#f43f5e)"></div>
+            <div class="vault-body">
+              <div class="vault-chips">
+                <span class="vault-chip">Blockchain</span>
+                <span class="vault-chip">MTech Thesis</span>
+              </div>
+              <h3 class="vault-title">Decentralized Academic Record System</h3>
+              <p class="vault-desc">ZK proof-based transcript verification on Ethereum. 1,200 test verifications on Mumbai testnet.</p>
+              <div class="vault-stack">
+                <span>Solidity</span><span>zkSNARKs</span><span>Hardhat</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vault-card">
+            <div class="vault-bar" style="background:linear-gradient(90deg,#22d3ee,#6366f1)"></div>
+            <div class="vault-body">
+              <div class="vault-chips">
+                <span class="vault-chip">Systems</span>
+                <span class="vault-chip">MCA Project</span>
+              </div>
+              <h3 class="vault-title">Distributed Task Scheduler</h3>
+              <p class="vault-desc">Go-based distributed queue with Raft consensus, handling 10K tasks/sec under load.</p>
+              <div class="vault-stack">
+                <span>Go</span><span>Raft</span><span>Redis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="vault-card vault-card--wide">
+            <div class="vault-bar" style="background:linear-gradient(90deg,#10b981,#6366f1)"></div>
+            <div class="vault-body">
+              <div class="vault-chips">
+                <span class="vault-chip">Full Stack</span>
+                <span class="vault-chip">PhD Prototype</span>
+                <span class="vault-chip">IEEE Published</span>
+              </div>
+              <h3 class="vault-title">Federated Learning Platform</h3>
+              <p class="vault-desc">Privacy-preserving ML training across distributed hospital nodes with differential privacy guarantees. Paper accepted at IEEE ICMLC 2025.</p>
+              <div class="vault-stack">
+                <span>PyTorch</span><span>gRPC</span><span>Kubernetes</span><span>Flower</span>
+              </div>
+            </div>
+            <div class="grade-badge" title="IEEE Published" style="background:linear-gradient(135deg,#10b981,#6366f1)">★</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TESTIMONIALS ══ -->
+    <section id="testimonials" class="section div-border">
+      <div class="container">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">Reviews</span>
+          <h2 class="sec-title">Scholars who<br><em>trusted us</em></h2>
+        </div>
+
+        <div class="testi-grid stagger">
+          <div class="testi-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              &ldquo;ECHELON delivered my MTech thesis two weeks early. The code was clean, documented, and I cleared my viva with zero questions unanswered.&rdquo;
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-av" aria-hidden="true">RK</div>
+              <div>
+                <div class="testi-name">Rahul Krishnamurthy</div>
+                <div class="testi-meta">MTech CSE · IIT Hyderabad</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card testi-featured">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              &ldquo;I was skeptical at first, but the technical depth was beyond what I expected. My federated learning project was genuinely research-grade. Exceptional work.&rdquo;
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-av" aria-hidden="true">SP</div>
+              <div>
+                <div class="testi-name">Sneha Pillai</div>
+                <div class="testi-meta">PhD CS · IISc Bangalore</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-card">
+            <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testi-quote">
+              &ldquo;The NDA, transparency, and weekly GitHub updates made it feel like a real engineering collaboration. Scored 95/100 at Anna University.&rdquo;
+            </blockquote>
+            <div class="testi-author">
+              <div class="testi-av" aria-hidden="true">AM</div>
+              <div>
+                <div class="testi-name">Arjun Mehta</div>
+                <div class="testi-meta">BTech IT · Anna University</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TERMINAL ══ -->
+    <section id="terminal" class="section div-border">
+      <div class="container-sm">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">Free Tool</span>
+          <h2 class="sec-title">GitHub Project<br><em>Analyzer</em></h2>
+          <p class="sec-sub">Paste any public GitHub URL and get an instant quality assessment of your existing code — completely free.</p>
+        </div>
+
+        <div class="term-box reveal">
+          <div class="term-bar">
+            <div class="term-dots" aria-hidden="true">
+              <span class="td td-r"></span><span class="td td-y"></span><span class="td td-g"></span>
+            </div>
+            <span class="term-title">echelon — project-analyzer v3.1</span>
+          </div>
+          <div class="term-body">
+            <div class="term-out" id="t-out" aria-live="polite">
+              <p class="t-line t-success">▶ ECHELON Analyzer ready — enter a GitHub URL below</p>
+              <p class="t-line t-dim">▶ Evaluates: code quality · documentation · security posture</p>
+            </div>
+            <div class="term-in-row">
+              <label for="repo-url" class="term-prompt">$&nbsp;&nbsp;</label>
+              <input type="url" id="repo-url" class="term-input"
+                placeholder="https://github.com/username/repository"
+                autocomplete="off" spellcheck="false" aria-label="GitHub repository URL">
+            </div>
+          </div>
+          <div class="term-foot">
+            <button id="run-btn" class="btn-run">
+              <span id="run-txt">Analyze Repository</span>
+              <span id="run-load" class="hidden"><span class="spin"></span> Analyzing…</span>
+            </button>
+          </div>
+          <div id="t-prog" class="term-prog hidden">
+            <div class="term-track"><div class="term-fill" id="t-fill"></div></div>
+            <span class="term-plbl" id="t-plbl">Initializing…</span>
+          </div>
+          <div id="t-result" class="hidden">
+            <div class="term-result-head">
+              <div class="tr-icon">✓</div>
+              <div>
+                <span class="tr-title">Analysis Complete</span>
+                <span class="tr-sub" id="tr-sub">Results ready</span>
+              </div>
+            </div>
+            <div class="term-scores" style="padding:0 1.5rem 1.5rem">
+              <div class="ts-card">
+                <span class="ts-val" id="sc-q">—</span>
+                <span>Code Quality</span>
+              </div>
+              <div class="ts-card">
+                <span class="ts-val" id="sc-d">—</span>
+                <span>Documentation</span>
+              </div>
+              <div class="ts-card">
+                <span class="ts-val" id="sc-s">—</span>
+                <span>Security</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PRICING ══ -->
+    <section id="pricing" class="section div-border">
+      <div class="container">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">Pricing</span>
+          <h2 class="sec-title">Transparent pricing,<br><em>zero surprises</em></h2>
+          <p class="sec-sub">Get a custom quote after your free consultation. All plans include NDA, source code, and documentation.</p>
+        </div>
+
+        <div class="pricing-grid stagger">
+
+          <div class="price-card">
+            <div class="price-tier">Starter</div>
+            <div class="price-name">BTech / BE</div>
+            <p class="price-desc">Full-year projects built to your university's exact guidelines, ready for submission and viva.</p>
+            <div class="price-cta">
+              <a href="#contact" class="btn btn-outline btn-full">Get a Quote</a>
+            </div>
+            <div class="price-features">
+              <div class="price-feat"><span class="pf-check">✓</span><span>Complete source code + docs</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Project report + PPT</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>GitHub repository setup</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Plagiarism certificate</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>14-day viva support</span></div>
+              <div class="price-feat"><span class="pf-dash">–</span><span style="color:var(--text3)">Research paper</span></div>
+            </div>
+          </div>
+
+          <div class="price-card price-card--featured">
+            <div class="price-tier">Professional</div>
+            <div class="price-name">MTech / MCA</div>
+            <p class="price-desc">Advanced thesis projects with research depth, rigorous testing, and full academic documentation.</p>
+            <div class="price-cta">
+              <a href="#contact" class="btn btn-primary btn-full">Get a Quote</a>
+            </div>
+            <div class="price-features">
+              <div class="price-feat"><span class="pf-check">✓</span><span>Everything in BTech</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Research methodology chapter</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Performance benchmarking</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Dataset + experiment logs</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>30-day post-delivery support</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Conference paper draft</span></div>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <div class="price-tier">Research</div>
+            <div class="price-name">PhD Prototype</div>
+            <p class="price-desc">Research-grade prototypes, implementations for novel algorithms, and publication-ready codebases.</p>
+            <div class="price-cta">
+              <a href="#contact" class="btn btn-outline btn-full">Book Consultation</a>
+            </div>
+            <div class="price-features">
+              <div class="price-feat"><span class="pf-check">✓</span><span>Everything in MTech</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Novel algorithm implementation</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>IEEE/Springer paper support</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Statistical analysis &amp; plots</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>60-day ongoing support</span></div>
+              <div class="price-feat"><span class="pf-check">✓</span><span>Dedicated senior engineer</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ ══ -->
+    <section id="faq" class="section div-border">
+      <div class="container-xs">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">FAQ</span>
+          <h2 class="sec-title">Questions<br><em>answered</em></h2>
+        </div>
+
+        <div class="faq-list" id="faq-list">
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>Is this considered academic dishonesty?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              ECHELON functions as a professional development studio. Like hiring a team at a startup, you learn by being involved in the process — we require regular check-ins, explain every design decision, and help you understand the codebase so you can defend it confidently.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>How do I know my project idea won't be stolen?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              We sign a mutual NDA before any project discussion begins. Your idea, your code, and your identity are fully confidential. We have never and will never reuse client work for any other student.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>What if I'm not satisfied with the delivered project?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              We offer unlimited revisions during the development phase and a structured review milestone at 50% completion. If the final delivery doesn't match the agreed scope, we fix it at no additional charge.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>How quickly can you deliver a project?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              Timeline depends on complexity. A standard BTech project typically takes 4–8 weeks. MTech thesis projects run 8–16 weeks. Urgent delivery (2–3 weeks for simpler projects) is available at a premium. We always confirm feasibility before accepting.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>Do you handle international students and universities?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              Yes. We've worked with students from NTU Singapore, universities in the UK, UAE, and across Southeast Asia. We adapt to your university's specific requirements, citation style, and formatting guidelines.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              <span>How do payments work?</span>
+              <div class="faq-arrow" aria-hidden="true">+</div>
+            </div>
+            <div class="faq-a">
+              Payments are milestone-based: 40% upfront, 30% at mid-delivery review, and 30% on final delivery. We accept UPI, bank transfer, PayPal, and international wire transfer. No full payment is required before work begins.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="section div-border">
+      <div class="container-xs">
+        <div class="sec-header centered reveal">
+          <span class="sec-tag">Get in Touch</span>
+          <h2 class="sec-title">Let&rsquo;s build<br><em>your project</em></h2>
+          <p class="sec-sub">Tell us about your project and we'll respond within 4 hours with a free consultation call.</p>
+        </div>
+
+        <div class="contact-card reveal">
+          <form id="contact-form" class="cform" novalidate aria-label="Project enquiry form">
+
+            <div class="form-row">
+              <div class="form-g" id="fg-name">
+                <label for="f-name" class="form-lbl">Full Name <span class="req">*</span></label>
+                <input type="text" id="f-name" name="name" class="form-ctrl" placeholder="Your full name" required autocomplete="name" aria-required="true" aria-describedby="err-name">
+                <span class="form-err" id="err-name" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="form-g" id="fg-email">
+                <label for="f-email" class="form-lbl">Email Address <span class="req">*</span></label>
+                <input type="email" id="f-email" name="email" class="form-ctrl" placeholder="you@university.edu" required autocomplete="email" aria-required="true" aria-describedby="err-email">
+                <span class="form-err" id="err-email" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-g" id="fg-type">
+              <label for="f-type" class="form-lbl">Project Level <span class="req">*</span></label>
+              <select id="f-type" name="project_type" class="form-ctrl form-select" required aria-required="true" aria-describedby="err-type">
+                <option value="" disabled selected>Select your program</option>
+                <option value="btech">BTech / BE Final Year</option>
+                <option value="mtech">MTech / ME Thesis</option>
+                <option value="mca">MCA Project</option>
+                <option value="phd">PhD Research Prototype</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="form-err" id="err-type" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-g" id="fg-msg">
+              <label for="f-msg" class="form-lbl">Project Brief <span class="req">*</span></label>
+              <textarea id="f-msg" name="message" class="form-ctrl form-textarea" rows="5" placeholder="Describe your project idea, tech stack, submission deadline, and any specific requirements…" required aria-required="true" aria-describedby="err-msg"></textarea>
+              <span class="form-err" id="err-msg" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="form-footer">
+              <p class="privacy-note">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                  <rect x="1" y="5.5" width="11" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M3.5 5.5V4A3 3 0 0 1 9.5 4V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+                Protected by NDA. Never shared.
+              </p>
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-lg">
+                <span id="sub-txt">Send Enquiry</span>
+                <span id="sub-load" class="hidden"><span class="spin"></span> Sending…</span>
+              </button>
+            </div>
+
+            <div id="form-feedback" class="form-feedback hidden" aria-live="polite" role="status"></div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="#hero" class="footer-logo">
+            <div class="footer-logo-mark">E</div>
+            <span class="footer-brand-name">ECHELON</span>
+          </a>
+          <p class="footer-tagline">Production-grade academic engineering for CS/IT scholars. Quality, genuinity, and trust — in every project.</p>
+          <div class="footer-contact">
+            <a href="mailto:hello@echelon.dev">hello@echelon.dev</a>
+            <span>Response within 4 hours</span>
+          </div>
+          <div class="footer-social" style="margin-top:1.25rem">
+            <a href="#" class="social-btn" aria-label="GitHub" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Twitter / X" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-head">Platform</h5>
+          <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#vault">Project Vault</a></li>
+            <li><a href="#terminal">Analyzer Tool</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-head">Programs</h5>
+          <ul>
+            <li><a href="#contact">BTech Projects</a></li>
+            <li><a href="#contact">MTech Thesis</a></li>
+            <li><a href="#contact">MCA Projects</a></li>
+            <li><a href="#contact">PhD Prototypes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="footer-head">Company</h5>
+          <ul>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 ECHELON. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ SCRIPTS ═══ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="scripts.js"></script>
+
+</body>
+</html>
