@@ -16,8 +16,8 @@ module.exports = async function handler(req, res) {
       },
       body: JSON.stringify({
         // ⚠️ CRITICAL: The email address below MUST be verified in your Brevo account!
-        sender: { email: "hello@echelon.dev", name: "ECHELON Website" }, 
-        to: [{ email: "hello@echelon.dev", name: "ECHELON Team" }],
+        sender: { email: "echelonglobaltech@gmail.com", name: "ECHELON Website" },, 
+        to: [{ email: "echelonglobaltech@gmail.com", name: "ECHELON Team" }],
         replyTo: { email: email, name: name },
         subject: `New Enquiry: ${project_type.toUpperCase()} — ${name}`,
         htmlContent: `
