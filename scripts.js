@@ -7,17 +7,6 @@
   'use strict';
 
   /* ─────────────────────────────────────────
-     CONFIG
-  ───────────────────────────────────────── */
-  var CFG = {
-    BREVO_API_KEY: 'YOUR_BREVO_API_KEY_HERE',
-    BREVO_TO_EMAIL: 'hello@echelon.dev',
-    BREVO_TO_NAME: 'ECHELON Team',
-    BREVO_FROM_EMAIL: 'noreply@echelon.dev',
-    BREVO_FROM_NAME: 'ECHELON Website'
-  };
-
-  /* ─────────────────────────────────────────
      UTILS
   ───────────────────────────────────────── */
   function qs(sel, ctx) { return (ctx || document).querySelector(sel); }
@@ -401,7 +390,7 @@
         var cx = rect.width  / 2;
         var cy = rect.height / 2;
         var rx = ((y - cy) / cy) * -MAX;
-        var ry = ((x - cx) / cx) *  MAX;
+        var ry = ((x - cx) / cx) * MAX;
         var glowX = (x / rect.width  * 100).toFixed(1);
         var glowY = (y / rect.height * 100).toFixed(1);
         card.style.transform     = 'perspective(700px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateZ(8px)';
@@ -806,7 +795,8 @@
       submitForm();
     });
 
-    ['f-name', 'f-email', 'f-type', 'f-msg'].forEach(function (id) {
+    // Added f-num to the array
+    ['f-name', 'f-email', 'f-num', 'f-type', 'f-msg'].forEach(function (id) {
       var el = qs('#' + id);
       if (!el) return;
       el.addEventListener('blur', function () { validateField(id); });
@@ -828,6 +818,9 @@
     } else if (id === 'f-email') {
       if (!val) msg = 'Email address is required.';
       else if (!isEmail(val)) msg = 'Please enter a valid email address.';
+    } else if (id === 'f-num') {
+      if (!val) msg = 'Contact number is required.';
+      else if (!/^\d{10}$/.test(val)) msg = 'Please enter a valid 10-digit number.';
     } else if (id === 'f-type') {
       if (!val) msg = 'Please select your project level.';
     } else if (id === 'f-msg') {
@@ -848,7 +841,8 @@
 
   function validateAll() {
     var ok = true;
-    ['f-name', 'f-email', 'f-type', 'f-msg'].forEach(function (id) {
+    // Added f-num here too
+    ['f-name', 'f-email', 'f-num', 'f-type', 'f-msg'].forEach(function (id) {
       if (!validateField(id)) ok = false;
     });
     return ok;
@@ -865,21 +859,13 @@
     if (subLoad) subLoad.classList.remove('hidden');
     if (fb)      fb.classList.add('hidden');
 
-    var name    = sanitize(qs('#f-name').value.trim());
-    var email   = sanitize(qs('#f-email').value.trim());
-    var type    = sanitize(qs('#f-type').value.trim());
-    var message = sanitize(qs('#f-msg').value.trim());
-
+    // Payload sending to Vercel backend
     var payload = {
-      sender: { name: name + ' (via ECHELON)', email: CFG.BREVO_FROM_EMAIL },
-      to: [{ email: CFG.BREVO_TO_EMAIL, name: CFG.BREVO_TO_NAME }],
-      replyTo: { email: email, name: name },
-      subject: 'New Enquiry: ' + type.toUpperCase() + ' — ' + name,
-      htmlContent:
-        '<p><strong>Name:</strong> ' + name + '</p>' +
-        '<p><strong>Email:</strong> ' + email + '</p>' +
-        '<p><strong>Level:</strong> ' + type + '</p>' +
-        '<p><strong>Brief:</strong></p><p>' + message.replace(/\n/g, '<br>') + '</p>'
+      name: sanitize(qs('#f-name').value.trim()),
+      email: sanitize(qs('#f-email').value.trim()),
+      phone: sanitize(qs('#f-num').value.trim()),
+      project_type: sanitize(qs('#f-type').value.trim()),
+      message: sanitize(qs('#f-msg').value.trim())
     };
 
     sendEmail(payload, function (ok) {
@@ -889,7 +875,7 @@
       if (ok) {
         showFeedback(true, "✓ Your enquiry has been received! We'll be in touch within 4 hours.");
         qs('#contact-form').reset();
-        ['f-name','f-email','f-type','f-msg'].forEach(function(id){
+        ['f-name','f-email','f-num','f-type','f-msg'].forEach(function(id){
           var el = qs('#'+id); if(el) el.classList.remove('err');
           var er = qs('#err-'+id.replace('f-','')); if(er) er.textContent='';
         });
@@ -900,15 +886,10 @@
   }
 
   function sendEmail(payload, cb) {
-    if (CFG.BREVO_API_KEY === 'YOUR_BREVO_API_KEY_HERE') {
-      // Simulate success in development
-      setTimeout(function () { cb(true); }, 1400);
-      return;
-    }
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://api.brevo.com/v3/smtp/email', true);
+    // Targeting Vercel API Endpoint
+    xhr.open('POST', '/api/contact', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('api-key', CFG.BREVO_API_KEY);
     xhr.timeout = 15000;
     xhr.onreadystatechange = function () {
       if (xhr.readyState !== 4) return;
