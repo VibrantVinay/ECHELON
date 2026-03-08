@@ -885,7 +885,7 @@
     });
   }
 
- function sendEmail(payload, cb) {
+function sendEmail(payload, cb) {
   var formData = {
     access_key: "a32b2043-030c-4b78-a356-40258a27e8bb", 
     subject: "New ECHELON Enquiry: " + payload.name,
@@ -897,8 +897,6 @@
   };
 
   var xhr = new XMLHttpRequest();
-  
-  // Ensure this URL is EXACTLY this for Web3Forms
   xhr.open('POST', 'https://api.web3forms.com/submit', true);
   
   xhr.setRequestHeader('Content-Type', 'application/json');
@@ -906,12 +904,17 @@
   
   xhr.onreadystatechange = function () {
     if (xhr.readyState !== 4) return;
+    
+    // --- THIS WILL PRINT THE EXACT ERROR IN YOUR CONSOLE ---
+    console.log("Web3Forms Status:", xhr.status);
+    console.log("Web3Forms Response:", xhr.responseText);
+    // -------------------------------------------------------
+
     cb(xhr.status >= 200 && xhr.status < 300);
   };
   
   xhr.send(JSON.stringify(formData));
 }
-
   function showFeedback(ok, msg) {
     var fb = qs('#form-feedback');
     if (!fb) return;
