@@ -2019,3 +2019,25 @@ footer {
     -webkit-text-fill-color: #D4AF37 !important;
     font-weight: 600 !important;
 }
+/* ==========================================================
+   LOGO SIZE ADJUSTMENTS
+   ========================================================== */
+
+/* 1. Navbar Logo Icon Size */
+.logo-badge {
+    width: 50px !important;  /* Increased from 32px */
+    height: 50px !important; /* Increased from 32px */
+    font-size: 1.5rem !important; /* If you are using text inside the box */
+}
+
+/* 2. Navbar Logo Text Size (Optional: keeping it balanced) */
+.logo-name {
+    font-size: 1.6rem !important; /* Increased from 1.3rem */
+}
+
+/* 3. Footer Logo Icon Size (Optional) */
+.footer-logo-mark {
+    width: 40px !important;  /* Increased from 28px */
+    height: 40px !important; /* Increased from 28px */
+    font-size: 1.2rem !important;
+}
