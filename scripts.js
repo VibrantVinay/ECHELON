@@ -885,36 +885,32 @@
     });
   }
 
-  function sendEmail(payload, cb) {
-    // 1. Format the data exactly how Web3Forms expects it
-    var formData = {
-      access_key: "a32b2043-030c-4b78-a356-40258a27e8bb", // <-- Paste your key from the email here
-      subject: "New ECHELON Enquiry: " + payload.name,
-      from_name: payload.name,
-      email: payload.email, // Replies will go directly to this email
-      phone: payload.phone,
-      project_level: payload.project_type,
-      message: payload.message
-    };
+ function sendEmail(payload, cb) {
+  var formData = {
+    access_key: "a32b2043-030c-4b78-a356-40258a27e8bb", 
+    subject: "New ECHELON Enquiry: " + payload.name,
+    from_name: payload.name,
+    email: payload.email,
+    phone: payload.phone,
+    project_level: payload.project_type,
+    message: payload.message
+  };
 
-    var xhr = new XMLHttpRequest();
-    
-    // 2. Point to the Web3Forms API instead of your own server
-    xhr.open('POST', 'https://api.web3forms.com/submit', true);
-    
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.timeout = 15000;
-    
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState !== 4) return;
-      cb(xhr.status >= 200 && xhr.status < 300);
-    };
-    xhr.onerror   = function () { cb(false); };
-    xhr.ontimeout = function () { cb(false); };
-    
-    try { xhr.send(JSON.stringify(formData)); } catch (e) { cb(false); }
-  }
+  var xhr = new XMLHttpRequest();
+  
+  // Ensure this URL is EXACTLY this for Web3Forms
+  xhr.open('POST', 'https://api.web3forms.com/submit', true);
+  
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Accept', 'application/json');
+  
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== 4) return;
+    cb(xhr.status >= 200 && xhr.status < 300);
+  };
+  
+  xhr.send(JSON.stringify(formData));
+}
 
   function showFeedback(ok, msg) {
     var fb = qs('#form-feedback');
