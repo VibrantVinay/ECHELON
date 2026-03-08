@@ -1932,14 +1932,14 @@ footer {
   );
 }
 
-/* Target ONLY the headings, paragraphs, labels, and inputs inside the contact section.
-   The :not() rules ensure buttons are completely ignored by this effect. */
+/* 1. Target headings, paragraphs, labels, and text inputs.
+   We added :not(select) so the dropdown doesn't get invisible text. */
 .contact-card h1,
 .contact-card h2,
 .contact-card h3,
 .contact-card p,
 .form-lbl,
-.form-ctrl:not(button):not([type="submit"]):not([type="button"]):not(.btn),
+.form-ctrl:not(button):not([type="submit"]):not([type="button"]):not(.btn):not(select),
 .privacy-note {
     background: var(--grad-super-shiny) !important;
     background-size: 200% auto !important;
@@ -1952,7 +1952,38 @@ footer {
 
 /* This animation moves the gradient across the text, creating the "shine" */
 @keyframes goldShine {
-    to {
-        background-position: 200% center;
-    }
+    to { background-position: 200% center; }
+}
+
+/* ==========================================================
+   SPECIFIC CONTACT FORM FIXES
+   ========================================================== */
+
+/* 2. Make all placeholders pure white */
+.contact-card .form-ctrl::placeholder {
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+    opacity: 0.8 !important; /* Slight transparency so it looks like a placeholder */
+    background: none !important;
+}
+
+/* 3. Style the Select Panel: Gold background, black text */
+.contact-card select.form-ctrl {
+    background: var(--grad-super-shiny) !important;
+    background-size: 200% auto !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    border: 1px solid #D4AF37 !important;
+    font-weight: 700 !important;
+    animation: goldShine 5s linear infinite !important;
+    /* Optional: Keep your custom dropdown arrow but make it black so it's visible on gold */
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+/* The opened dropdown options (Browsers block gradients here, so we use solid gold) */
+.contact-card select.form-ctrl option {
+    background: #D4AF37 !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    font-weight: 600 !important;
 }
