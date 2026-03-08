@@ -2135,3 +2135,54 @@ footer {
     box-shadow: 0 0 15px rgba(201, 169, 110, 0.15), 
                 inset 0 0 10px rgba(201, 169, 110, 0.05) !important;
 }
+/* ==========================================================
+   EXTENDED MUTED ECHELON TEXT & HOVER GLOW
+   Targets: Stats, Trust Marquee, and Footer Elements
+   ========================================================== */
+
+/* 1. Remove shiny animation & apply solid muted gold */
+.stat-lbl,
+.trust-label,
+.m-uni,
+.footer-col a,
+.footer-contact a,
+.footer-contact span,
+.footer-bottom,
+.footer-legal a {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    animation: none !important;
+    
+    color: #8a7d6a !important; 
+    
+    /* Smooth transition for the hover glow */
+    transition: color 0.3s ease, text-shadow 0.3s ease !important;
+}
+
+/* 2. Glow effect on Hover for interactive text links */
+.m-uni:hover,
+.footer-col a:hover,
+.footer-contact a:hover,
+.footer-legal a:hover {
+    color: #c9a96e !important; /* Shifts to the brighter gold */
+    text-shadow: 0 0 10px rgba(201, 169, 110, 0.4), 
+                 0 0 20px rgba(201, 169, 110, 0.15) !important;
+}
+
+/* 3. Button Glows (Back to Top & Social Icons) */
+#btt, .social-btn {
+    color: #8a7d6a !important;
+    border-color: rgba(138, 125, 106, 0.3) !important; /* Muted border to match */
+    transition: all 0.3s ease !important;
+}
+
+#btt:hover, .social-btn:hover {
+    color: #c9a96e !important;
+    border-color: #c9a96e !important;
+    background: rgba(201, 169, 110, 0.05) !important;
+    box-shadow: 0 0 15px rgba(201, 169, 110, 0.2), 
+                inset 0 0 10px rgba(201, 169, 110, 0.05) !important;
+    text-shadow: 0 0 10px rgba(201, 169, 110, 0.4) !important;
+}
