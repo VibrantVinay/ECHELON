@@ -1977,49 +1977,41 @@ footer {
     background: none !important;
 }
 
-/* Base style for Select Panel: White text when a course IS selected */
+/* Base style for Select Panel: Match other input boxes */
 .contact-card select.form-ctrl {
-    /* Layer 1: White Arrow | Layer 2: Shiny Gold Gradient */
-    background-image: 
-        url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
-        var(--grad-super-shiny) !important;
-    
-    /* Arrow size: 10x6px | Gradient size: 200% */
-    background-size: 10px 6px, 200% auto !important;
-    
-    /* Arrow position: Right | Gradient position: 0% */
-    background-position: right 16px center, 0% center !important;
-    
-    /* Arrow: No Repeat | Gradient: Repeat */
-    background-repeat: no-repeat, repeat !important;
-
-    color: #ffffff !important; 
-    -webkit-text-fill-color: #ffffff !important;
-    border: 1px solid #D4AF37 !important;
+    background: var(--surf) !important; /* Dark background to match normal inputs */
+    border: 1px solid var(--border) !important;
+    color: #D4AF37 !important; /* Solid gold text for selected items */
+    -webkit-text-fill-color: #D4AF37 !important;
     font-weight: 700 !important;
     
-    /* Use a custom animation specifically for the select box */
-    animation: goldShineSelect 5s linear infinite !important;
-}
-
-/* Style for when the placeholder ("Select your program") is active */
-.contact-card select.form-ctrl:invalid {
-    color: #000000 !important; 
-    -webkit-text-fill-color: #000000 !important;
+    /* Gold dropdown arrow to match the selected text */
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23D4AF37' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 10px 6px !important;
     
-    /* Layer 1: Black Arrow | Layer 2: Shiny Gold Gradient */
-    background-image: 
-        url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"),
-        var(--grad-super-shiny) !important;
+    /* Turn off the background shine animation so it stays dark */
+    animation: none !important; 
 }
 
-/* Specific animation for the select to ensure the arrow doesn't move */
-@keyframes goldShineSelect {
-    to {
-        /* Keeps arrow fixed on the right, only moves the gradient to 200% */
-        background-position: right 16px center, 200% center;
-    }
+/* Hover & Focus state for the select to match text inputs */
+.contact-card select.form-ctrl:focus {
+    background: var(--card) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(201,169,110,.1) !important;
 }
+
+/* Style for when the placeholder ("Select your program" etc) is active */
+.contact-card select.form-ctrl:invalid {
+    color: #ffffff !important; /* White text for placeholder */
+    -webkit-text-fill-color: #ffffff !important;
+    opacity: 0.8 !important;   /* Matches text input placeholder opacity */
+    
+    /* White dropdown arrow for placeholder state */
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
 /* The opened dropdown options: Prussian Blue background, Gold text */
 .contact-card select.form-ctrl option {
     background: #003153 !important; /* Prussian Blue */
