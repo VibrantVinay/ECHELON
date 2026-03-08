@@ -2041,3 +2041,33 @@ footer {
     height: 40px !important; /* Increased from 28px */
     font-size: 1.2rem !important;
 }
+/* ==========================================================
+   HAMBURGER & MOBILE MENU FIXES
+   ========================================================== */
+
+/* 1. Make the 3rd hamburger line the same length as the others */
+.ham span:last-child {
+    width: 20px !important; /* Force it to match the other lines */
+    transform: none !important; /* Remove the staggered offset */
+}
+
+/* Ensure the "X" animation still looks correct with the longer 3rd line */
+.ham.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+    width: 20px !important;
+}
+
+/* 2. Hide the brand name inside the mobile menu panel */
+/* This targets the text inside the mobile menu header, but keeps the close (X) button visible */
+.mn-head {
+    color: transparent !important; /* Hide the text */
+    justify-content: flex-end !important; /* Push the close button to the right */
+}
+
+/* Ensure the close button itself doesn't become transparent */
+.mn-close {
+    color: var(--text1) !important; 
+}
+.mn-close:hover {
+    color: var(--primary) !important;
+}
