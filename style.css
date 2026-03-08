@@ -1915,3 +1915,57 @@ footer {
   .marquee-outer, #hero-canvas, #btt { display: none !important; }
   body { color: #000; background: #fff; }
 }
+/* ==========================================================
+   SHINY GOLD TEXT MASTER OVERRIDE
+   ========================================================== */
+
+:root {
+  /* High-contrast metallic gradient to simulate a reflective shine */
+  --grad-super-shiny: linear-gradient(
+    -45deg,
+    #AA771C 0%,
+    #D4AF37 20%,
+    #FFFCE0 40%, /* Bright highlight */
+    #FCF6BA 60%,
+    #D4AF37 80%,
+    #AA771C 100%
+  );
+}
+
+/* Target all typographic elements and specific theme classes. 
+  We use :not() to exclude buttons and hamburger menu bars 
+  so their backgrounds and lines don't disappear.
+*/
+h1, h2, h3, h4, h5, h6, p, a:not(.btn), span:not(.ham span):not(.pf-check):not(.pf-dash), li, strong, em, label,
+.hero-title, .sec-title, .svc-name, .feat-title, .vault-title, .price-name, .faq-q, .testi-quote,
+.nav-link, .mn-link, .sec-tag, .hero-eyebrow, .stat-num, .stat-lbl, .fc-title, .fc-sub, .fc-row, .fc-tag,
+.badge-float, .m-uni, .svc-num, .svc-label, .svc-desc, .feat-desc, .proc-node span, .proc-title, .proc-desc,
+.trust-pill, .vault-chip, .vault-desc, .testi-name, .testi-meta, .term-title, .t-line, .term-prompt, .term-input,
+.term-plbl, .ts-card, .ts-val, .tr-title, .tr-sub, .price-tier, .price-desc, .price-feat, .faq-a, .form-lbl,
+.form-ctrl, .privacy-note, .footer-brand-name, .footer-tagline, .footer-contact a, .footer-head, .footer-col a, .footer-bottom,
+.logo-name {
+    background: var(--grad-super-shiny) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    animation: goldShine 5s linear infinite !important;
+}
+
+/* This animation moves the gradient across the text, creating the "shine" */
+@keyframes goldShine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Specifically fix the original gradient text to use the new shiny one */
+.hero-title .grad-line, .sec-title em, .grad-text {
+    background: var(--grad-super-shiny) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
