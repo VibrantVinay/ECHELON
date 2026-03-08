@@ -1916,7 +1916,7 @@ footer {
   body { color: #000; background: #fff; }
 }
 /* ==========================================================
-   SHINY GOLD TEXT MASTER OVERRIDE
+   SHINY GOLD TEXT - CONTACT SECTION ONLY
    ========================================================== */
 
 :root {
@@ -1932,18 +1932,15 @@ footer {
   );
 }
 
-/* Target all typographic elements and specific theme classes. 
-  We use :not() to exclude buttons and hamburger menu bars 
-  so their backgrounds and lines don't disappear.
-*/
-h1, h2, h3, h4, h5, h6, p, a:not(.btn), span:not(.ham span):not(.pf-check):not(.pf-dash), li, strong, em, label,
-.hero-title, .sec-title, .svc-name, .feat-title, .vault-title, .price-name, .faq-q, .testi-quote,
-.nav-link, .mn-link, .sec-tag, .hero-eyebrow, .stat-num, .stat-lbl, .fc-title, .fc-sub, .fc-row, .fc-tag,
-.badge-float, .m-uni, .svc-num, .svc-label, .svc-desc, .feat-desc, .proc-node span, .proc-title, .proc-desc,
-.trust-pill, .vault-chip, .vault-desc, .testi-name, .testi-meta, .term-title, .t-line, .term-prompt, .term-input,
-.term-plbl, .ts-card, .ts-val, .tr-title, .tr-sub, .price-tier, .price-desc, .price-feat, .faq-a, .form-lbl,
-.form-ctrl, .privacy-note, .footer-brand-name, .footer-tagline, .footer-contact a, .footer-head, .footer-col a, .footer-bottom,
-.logo-name {
+/* Target ONLY the headings, paragraphs, labels, and inputs inside the contact section.
+   The :not() rules ensure buttons are completely ignored by this effect. */
+.contact-card h1,
+.contact-card h2,
+.contact-card h3,
+.contact-card p,
+.form-lbl,
+.form-ctrl:not(button):not([type="submit"]):not([type="button"]):not(.btn),
+.privacy-note {
     background: var(--grad-super-shiny) !important;
     background-size: 200% auto !important;
     -webkit-background-clip: text !important;
@@ -1958,14 +1955,4 @@ h1, h2, h3, h4, h5, h6, p, a:not(.btn), span:not(.ham span):not(.pf-check):not(.
     to {
         background-position: 200% center;
     }
-}
-
-/* Specifically fix the original gradient text to use the new shiny one */
-.hero-title .grad-line, .sec-title em, .grad-text {
-    background: var(--grad-super-shiny) !important;
-    background-size: 200% auto !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-    color: transparent !important;
 }
