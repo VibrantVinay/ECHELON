@@ -889,7 +889,7 @@
     var xhr = new XMLHttpRequest();
     
     // ⚠️ CRITICAL: Replace 'your-app-name' with your actual live Render URL
-    xhr.open('POST', 'https://www.echelontech.publicvm.com/send-email', true);
+    xhr.open('POST', 'https://echelon-vqfa.onrender.com/send-email', true);
     
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.timeout = 15000;
