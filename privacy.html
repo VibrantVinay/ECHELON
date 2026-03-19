@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | ECHELON</title>
+  <meta name="robots" content="noindex, follow"> <meta name="theme-color" content="#0a0a0b">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VksW8mmg/web-app-manifest-512x512.png?v=3">
+  
+  <style>
+    body { opacity: 0; transition: opacity .5s ease; } 
+    body.loaded { opacity: 1; }
+    .legal-container { max-width: 800px; margin: 0 auto; padding: 160px 20px 80px; }
+    .legal-title { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+    .legal-date { color: var(--text3); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; margin-bottom: 3rem; }
+    .legal-content h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin: 2.5rem 0 1rem; color: var(--text1); }
+    .legal-content p, .legal-content li { color: var(--text2); line-height: 1.7; margin-bottom: 1rem; font-size: 1.05rem; }
+    .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cur-dot" aria-hidden="true"></div>
+  <div class="cur-ring" aria-hidden="true"></div>
+
+  <header role="banner">
+    <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-badge"><img src="https://i.postimg.cc/jqwfTpqX/unnamed.png" alt="ECHELON Logo" class="badge-img"></div>
+          <span class="logo-name">ECHELON</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#process" class="nav-link">Process</a></li>
+          <li><a href="index.html#vault" class="nav-link">Work</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#contact" class="nav-cta desktop">Start Project</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="legal-container">
+      <h1 class="legal-title">Privacy Policy</h1>
+      <p class="legal-date">Last Updated: March 2026</p>
+
+      <div class="legal-content">
+        <p>At ECHELON, we understand that confidentiality is the cornerstone of our service. This Privacy Policy outlines how we collect, use, and fiercely protect your personal and academic information.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We only collect information strictly necessary to deliver our engineering services:</p>
+        <ul>
+          <li><strong>Contact Information:</strong> Name, email address, and phone number provided via our inquiry form.</li>
+          <li><strong>Project Specifications:</strong> University guidelines, grading rubrics, project briefs, and technical requirements.</li>
+          <li><strong>Technical Data:</strong> Standard server logs, IP addresses, and browser data for security and performance monitoring.</li>
+        </ul>
+
+        <h2>2. Our Strict NDA & Confidentiality Guarantee</h2>
+        <p>We operate under an implicit Non-Disclosure Agreement (NDA) for every client. <strong>We will never:</strong></p>
+        <ul>
+          <li>Share your identity, university, or project details with any third party, academic institution, or external agency.</li>
+          <li>Reuse, resell, or publish your custom-built codebase for other clients.</li>
+          <li>Claim public credit for the work we develop for you.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>Your data is used exclusively for:</p>
+        <ul>
+          <li>Architecting and delivering your academic project.</li>
+          <li>Communicating with you regarding milestones, reviews, and post-delivery support.</li>
+          <li>Processing milestone payments securely.</li>
+        </ul>
+
+        <h2>4. Data Retention and Deletion</h2>
+        <p>Upon successful defense and completion of your 30-day/60-day post-delivery support period, we purge all identifiable project data, databases, and source code from our active development servers. You retain full ownership of the final deliverables.</p>
+
+        <h2>5. Contact Us</h2>
+        <p>If you have questions about our privacy practices or wish to request immediate data deletion, please contact us at: <a href="mailto:echelonglobaltech@gmail.com" style="color: var(--primary)">echelonglobaltech@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="scripts.js"></script>
+  <script>window.addEventListener('load', () => document.body.classList.add('loaded'));</script>
+</body>
+</html>
